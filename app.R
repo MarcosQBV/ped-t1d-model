@@ -8,6 +8,7 @@ library(ggplot2)
 
 source.all("./src")
 source.all("./ui")
+source.all("./public")
 
 ui <- page_navbar(    # creates empty page
   nav_panel("About", 
@@ -91,8 +92,22 @@ server <- function(input, output){
 
     model_params$n_t <- n_t
 
-    psa_params <- default_psa_params
+    psa_params <- list()
 
+    if (is.null(plot_values$u_D$dist)) {
+      psa_params <- default_psa_params
+    } else {
+      psa_params <- lapply(psa_param_ids, function(param) {
+        list(
+          def_dis = plot_values[[param]]$dist,
+          def_v1 = plot_values[[param]]$v1,
+          def_v2 = plot_values[[param]]$v2
+        )
+      })
+      names(psa_params) <- psa_param_ids
+    }
+
+    print(paste("PSA parameters: ", psa_params))
     # Run model function with Shiny inputs
     df_model_res = f_wrapper(psa_params, model_params)
     

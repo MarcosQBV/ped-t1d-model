@@ -4,7 +4,7 @@ rows_rendered <- reactiveValues()
 psa_parameters_panel <- function() {
   rendered_rows <- reactiveValues(list = list())
   fluidPage(
-    div(style = 'margin-top:20px; margin-bottom:20px',
+    div(style = 'margin-top:20px; margin-bottom:80px',
       h2("Probabilistic Sensitivity Analysis Parameters"),
     ),
     fluidRow(

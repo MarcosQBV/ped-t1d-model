@@ -45,7 +45,6 @@ server <- function(input, output){
         plot_values[[param]]$dist <- dist
         plot_values[[param]]$v1 <- val_1
         plot_values[[param]]$v2 <- val_2
-        print(paste(param, "updated:", dist, val_1, val_2))
 
         if (!is.null(dist_params[[dist]])) {
           updateTextInput(inputId = paste0(param, "_v1"), label = dist_params[[dist]][1])
@@ -86,7 +85,6 @@ server <- function(input, output){
       d_r = d_r,
       n_sim = n_sims
     )
-    print(paste("Model parameters: ", model_params))
 
     n_t <- model_params$n_age_max - model_params$n_age_init
 
@@ -106,8 +104,6 @@ server <- function(input, output){
       })
       names(psa_params) <- psa_param_ids
     }
-
-    print(paste("PSA parameters: ", psa_params))
     # Run model function with Shiny inputs
     df_model_res = f_wrapper(psa_params, model_params)
     

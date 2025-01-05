@@ -52,7 +52,12 @@ about_panel <- function() {
           ),
           p("Where:"),
           p("\\(\\Delta C\\) is the difference in costs between the intervention and the comparator."),
-          p("\\(\\Delta E\\) is the difference in effectiveness (e.g., QALYs) between the intervention and the comparator.")
+          p("\\(\\Delta E\\) is the difference in effectiveness (e.g., QALYs) between the intervention and the comparator."),
+          h1(style="margin-top: 40px; margin-bottom: 20px;",
+          "Data sources"),
+          p(style="margin-top: 40px;",
+            "As of january 5th, 2025, the chosen default data are for demonstration purposes only. In the future, proper estimates for the probability distributions of parameters will be identified as per Real World Evidence (RWE) and expert opinion. The model will be updated accordingly.",
+          ),
         )
       )
     )

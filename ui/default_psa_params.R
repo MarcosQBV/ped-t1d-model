@@ -51,7 +51,7 @@ default_psa_params <- list(
   c_Trt_S2 = list(
     name = "Cost of treatment in Stage 2",
     def_dis = "fixed", 
-    def_v1 = "200", 
+    def_v1 = "2000", 
     def_v2 = ""
   ),
   
